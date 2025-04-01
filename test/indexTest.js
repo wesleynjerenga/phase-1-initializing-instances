@@ -1,6 +1,7 @@
-require ( './helpers.js' );
+require('./helpers.js');
 
 const { expect } = require("chai");
+const { Breakfast, Lunch, Dinner } = require('../index');
 
 describe("breakfast", () => {
   it("has a class of breakfast", () => {
@@ -36,13 +37,11 @@ describe("dinner", () => {
   it("creates a new dinner with the correct parameters", () => {
     const newdinner = new Dinner(
       "balsamic salad",
-      "consomme",
       "filet mignon",
       "cheesecake"
     );
-    expect(newdinner.salad).to.equal("balsamic salad");
-    expect(newdinner.soup).to.equal("consomme");
-    expect(newdinner.entree).to.equal("filet mignon");
-    // since #dessert is a private field, we can't test for its value! We'll trust that you added it ;)
+    expect(newdinner.appetizer).to.equal("balsamic salad");
+    expect(newdinner.mainCourse).to.equal("filet mignon");
+    expect(newdinner.dessert).to.equal("cheesecake");
   });
 });
